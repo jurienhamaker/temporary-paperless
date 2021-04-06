@@ -1,0 +1,15 @@
+{
+	"extends": ".eslintrc.base.json",
+	"rules": {
+		"@typescript-eslint/naming-convention": "off",
+		"@angular-eslint/directive-selector": [
+			"error",
+			{
+				"type": "attribute",
+				"prefix": "",
+				"style": "kebab-case"
+			}
+		],
+		"max-len": "off"
+	}
+}

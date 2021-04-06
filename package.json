@@ -1,89 +1,96 @@
 {
-  "version": "0.1.0",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=12.13"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "NODE_ENV=production tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token f6e38b79b78a"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "name": "react-tw-blog-post",
-  "author": "Yoav Ganbar",
-  "module": "dist/react-tw-blog-post.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/react-tw-blog-post.cjs.production.min.js",
-      "limit": "10 KB"
+    "name": "paperless",
+    "author": "Employes",
+    "module": "dist/paperless.esm.js",
+    "version": "0.1.0",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "engines": {
+        "node": ">=12.13"
     },
-    {
-      "path": "dist/react-tw-blog-post.esm.js",
-      "limit": "10 KB"
+    "scripts": {
+        "start": "tsdx watch",
+        "build": "tsdx build",
+        "build:production": "NODE_ENV=production tsdx build",
+        "test": "tsdx test --passWithNoTests",
+        "lint": "tsdx lint",
+        "size": "size-limit",
+        "analyze": "size-limit --why",
+        "storybook": "start-storybook -p 5200 -s src",
+        "build-storybook": "build-storybook",
+        "chromatic": "npx chromatic --project-token f6e38b79b78a"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "tsdx lint"
+        }
+    },
+    "size-limit": [
+        {
+            "path": "dist/paperless.production.min.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/paperless.esm.js",
+            "limit": "10 KB"
+        }
+    ],
+    "dependencies": {
+        "@angular/core": "^11.2.8",
+        "@tailwindcss/postcss7-compat": "^2.1.0",
+        "autoprefixer": "^9",
+        "invariant": "^2.2.4",
+        "postcss": "^7",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.13",
+        "@size-limit/preset-small-lib": "^4.9.2",
+        "@storybook/addon-essentials": "^6.1.17",
+        "@storybook/addon-info": "^5.3.21",
+        "@storybook/addon-links": "^6.1.17",
+        "@storybook/addon-postcss": "^2.0.0",
+        "@storybook/addons": "^6.1.17",
+        "@storybook/react": "^6.1.17",
+        "@testing-library/jest-dom": "^5.11.9",
+        "@testing-library/react": "^11.2.5",
+        "@types/invariant": "^2.2.34",
+        "@types/react": "^17.0.1",
+        "@types/react-dom": "^17.0.0",
+        "@types/styled-components": "^5.1.7",
+        "@types/uuid": "^8.3.0",
+        "add": "^2.0.6",
+        "babel-loader": "^8.2.2",
+        "chromatic": "^5.6.2",
+        "husky": "^4.3.8",
+        "identity-obj-proxy": "^3.0.0",
+        "postcss-import": "^12.0.0",
+        "postcss-nested": "^4.2.3",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-icons": "^4.2.0",
+        "react-is": "^17.0.1",
+        "rollup-plugin-postcss": "^4.0.0",
+        "size-limit": "^4.9.2",
+        "styled-components": "^5.2.1",
+        "tsdx": "^0.14.1",
+        "tslib": "^2.1.0",
+        "typescript": "^4.1.3",
+        "yarn": "^1.22.10"
+    },
+    "peerDependencies": {
+        "react": ">=16"
+    },
+    "jest": {
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+            "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+        }
     }
-  ],
-  "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@size-limit/preset-small-lib": "^4.9.2",
-    "@storybook/addon-essentials": "^6.1.17",
-    "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.1.17",
-    "@storybook/addons": "^6.1.17",
-    "@storybook/react": "^6.1.17",
-    "@tailwindcss/postcss7-compat": "^2.0.3",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@types/react": "^17.0.1",
-    "@types/react-dom": "^17.0.0",
-    "@types/styled-components": "^5.1.7",
-    "autoprefixer": "^9",
-    "babel-loader": "^8.2.2",
-    "chromatic": "^5.6.2",
-    "husky": "^4.3.8",
-    "identity-obj-proxy": "^3.0.0",
-    "postcss": "^7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-is": "^17.0.1",
-    "rollup-plugin-postcss": "^4.0.0",
-    "size-limit": "^4.9.2",
-    "styled-components": "^5.2.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.1.0",
-    "typescript": "^4.1.3"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    }
-  }
 }

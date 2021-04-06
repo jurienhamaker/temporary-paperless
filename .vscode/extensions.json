@@ -6,7 +6,10 @@
   "recommendations": [
     "bradlc.vscode-tailwindcss",
     "jpoissonnier.vscode-styled-components",
-    "austenc.tailwind-docs"
+    "lightyen.tailwindcss-intellisense-twin",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "angular.ng-template"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

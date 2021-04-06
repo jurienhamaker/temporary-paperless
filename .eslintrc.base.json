@@ -1,0 +1,83 @@
+{
+	"root": true,
+	"overrides": [
+		{
+			"files": ["*.ts"],
+			"parserOptions": {
+				"project": ["tsconfig.json"],
+				"createDefaultProgram": true
+			},
+			"extends": [
+				"plugin:@angular-eslint/ng-cli-compat",
+				"plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+				"plugin:@angular-eslint/template/process-inline-templates"
+			],
+			"rules": {
+				"@angular-eslint/no-input-rename": "off",
+				"@typescript-eslint/naming-convention": [
+					"error",
+					{
+						"selector": "variable",
+						"format": ["camelCase", "UPPER_CASE", "snake_case"],
+						"leadingUnderscore": "allow",
+						"trailingUnderscore": "allow"
+					}
+				],
+				"@angular-eslint/component-selector": [
+					"error",
+					{
+						"type": "element",
+						"prefix": "e",
+						"style": "kebab-case"
+					}
+				],
+				"@angular-eslint/directive-selector": [
+					"error",
+					{
+						"type": "attribute",
+						"prefix": "e",
+						"style": "camelCase"
+					}
+				],
+				"@typescript-eslint/consistent-type-definitions": "error",
+				"@typescript-eslint/dot-notation": "off",
+				"@typescript-eslint/explicit-member-accessibility": [
+					"off",
+					{
+						"accessibility": "explicit"
+					}
+				],
+				"@typescript-eslint/member-ordering": [
+					"error",
+					{
+						"default": [
+							"field",
+
+							"constructor",
+
+							"public-method",
+							"protected-method",
+							"private-method"
+						]
+					}
+				],
+				"@typescript-eslint/no-unused-vars": "error",
+				"arrow-body-style": ["error", "as-needed"],
+				"id-blacklist": "off",
+				"id-match": "off",
+				"no-shadow": [
+					"off",
+					{
+						"hoist": "all"
+					}
+				],
+				"no-underscore-dangle": "off"
+			}
+		},
+		{
+			"files": ["*.html"],
+			"extends": ["plugin:@angular-eslint/template/recommended"],
+			"rules": {}
+		}
+	]
+}
