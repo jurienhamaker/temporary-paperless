@@ -12,7 +12,7 @@ import {
     divider,
     title,
     example,
-} from 'wix-storybook-utils/src/Sections';
+} from 'wix-storybook-utils/dist/src/Sections';
 
 export default {
     category: 'UI/Atoms',

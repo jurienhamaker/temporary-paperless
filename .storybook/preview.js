@@ -18,6 +18,9 @@ export const parameters = {
         canvas: {
             title: 'Playground',
         },
+        'storybook/docs/panel': {
+            hidden: true,
+        },
         '@geometricpanda/storybook-addon-iframe': {
             title: 'Abstract',
         },
