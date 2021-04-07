@@ -14,6 +14,9 @@ import {
     example,
 } from 'wix-storybook-utils/dist/src/Sections';
 
+import variantsText from './variants.md';
+import * as examples from './examples';
+
 export default {
     category: 'UI/Atoms',
     storyName: 'Button',
@@ -84,10 +87,9 @@ export default {
 
                     example({
                         title: 'Variants',
-                        components: [Button],
-                        source: `
-                            <Button>Primary Button</Button>
-						`,
+                        text: variantsText,
+                        components: { Button },
+                        source: examples.variants,
                     }),
                 ],
             }),
