@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from './button.react';
+import { Button } from '../button.react';
 
 import {
     header,
@@ -18,7 +18,15 @@ export default {
     category: 'UI/Atoms',
     storyName: 'Button',
     component: Button,
-    componentPath: './button.react.tsx',
+    componentPath: '../button.react.tsx',
+
+    parameters: {
+        badges: ['beta'],
+        iframe: {
+            url:
+                'https://app.goabstract.com/embed/3b1136b5-4f3b-4a29-97f1-d882303eb8d6',
+        },
+    },
 
     componentProps: {
         children: 'Action text',
@@ -75,10 +83,10 @@ export default {
                     title('Examples'),
 
                     example({
-                        title: 'Primary',
+                        title: 'Variants',
                         components: [Button],
                         source: `
-							<Button>Primary Button</Button>
+                            <Button>Primary Button</Button>
 						`,
                     }),
                 ],
