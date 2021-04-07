@@ -15,6 +15,7 @@ import {
 } from 'wix-storybook-utils/dist/src/Sections';
 
 import variantsText from './variants.md';
+import sizesText from './sizes.md';
 import * as examples from './examples';
 
 export default {
@@ -90,6 +91,13 @@ export default {
                         text: variantsText,
                         components: { Button },
                         source: examples.variants,
+                    }),
+
+                    example({
+                        title: 'Sizes',
+                        text: sizesText,
+                        components: { Button },
+                        source: examples.sizes,
                     }),
                 ],
             }),
