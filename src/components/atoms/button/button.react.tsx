@@ -16,9 +16,9 @@ export type ButtonVariants = 'primary' | 'secondary' | 'link';
 export type ButtonSizes = 'default' | 'small';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    variant: ButtonVariants;
-    size: ButtonSizes;
-    loading: boolean;
+    variant?: ButtonVariants;
+    size?: ButtonSizes;
+    loading?: boolean;
 }
 
 export type ButtonClickEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>;

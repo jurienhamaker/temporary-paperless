@@ -90,6 +90,7 @@
         "tsdx": "^0.14.1",
         "tslib": "^2.1.0",
         "typescript": "^4.1.3",
+        "wix-storybook-utils": "^4.0.11",
         "yarn": "^1.22.10"
     },
     "peerDependencies": {
