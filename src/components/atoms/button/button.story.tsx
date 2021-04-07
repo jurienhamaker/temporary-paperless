@@ -1,41 +1,93 @@
 import * as React from 'react';
-import { Button, ButtonProps } from './button.react';
+import { Button } from './button.react';
 
-function PButton(props: ButtonProps) {
-    return (
-        <div style={{ margin: '20px' }}>
-            <Button {...props}>Click me please!</Button>
-        </div>
-    );
-}
+import {
+    header,
+    tabs,
+    tab,
+    api,
+    playground,
+    description,
+    importExample,
+    divider,
+    title,
+    example,
+} from 'wix-storybook-utils/src/Sections';
 
 export default {
-    category: 'Atoms',
+    category: 'UI/Atoms',
     storyName: 'Button',
     component: Button,
     componentPath: './button.react.tsx',
 
-    componentProps: setState => ({
-        'data-hook': 'storybook-button',
-        children: ['Click me!'],
-    }),
+    componentProps: {
+        children: 'Action text',
+        variant: 'primary',
+        size: 'default',
+        loading: false,
+    },
+    exampleProps: {
+        onClick: () => 'Clicked!',
+        variant: [
+            {
+                label: 'Primary',
+                value: 'primary',
+            },
+            {
+                label: 'Secondary',
+                value: 'secondary',
+            },
+            {
+                label: 'Link',
+                value: 'link',
+            },
+        ],
+        size: [
+            {
+                label: 'Default',
+                value: 'default',
+            },
+            {
+                label: 'Small',
+                value: 'small',
+            },
+        ],
+        loading: false,
+    },
 
-    examples: (
-        <div
-            style={{
-                backgroundColor: '#f6f8fa',
-                margin: '10px',
-                padding: '16px',
-            }}
-        >
-            <h1>Examples</h1>
-            <h2>Variants</h2>
-            <PButton variant="primary" />
-            <PButton variant="secondary" />
-            <PButton variant="link" />
-            <h2>Sizes</h2>
-            <PButton />
-            <PButton size="small" />
-        </div>
-    ),
+    sections: [
+        header({
+            component: <Button>Action text</Button>,
+        }),
+
+        tabs([
+            tab({
+                title: 'Description',
+                sections: [
+                    description(
+                        `Button is a default component to display action in a page.`
+                    ),
+
+                    importExample(),
+
+                    divider(),
+
+                    title('Examples'),
+
+                    example({
+                        title: 'Primary',
+                        components: [Button],
+                        source: `
+							<Button>Primary Button</Button>
+						`,
+                    }),
+                ],
+            }),
+
+            ...[
+                { title: 'API', sections: [api()] },
+                { title: 'Playground', sections: [playground()] },
+            ].map(tab),
+        ]),
+    ],
 };

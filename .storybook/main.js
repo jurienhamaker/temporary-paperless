@@ -1,18 +1,21 @@
-// const path = require('path');
-
 module.exports = {
     stories: ['../src/stories/index.ts'],
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-postcss',
+        '@storybook/preset-scss',
         '@geometricpanda/storybook-addon-iframe',
         '@geometricpanda/storybook-addon-badges',
     ],
     typescript: {
-        check: true, // type-check stories during Storybook build
+        check: false, // type-check stories during Storybook build
     },
     webpackFinal: async config => {
+        config.node = {
+            fs: 'empty',
+        };
+
         config.module.rules.push({
             test: /\.story\.[j|t]sx?$/,
             loader: 'wix-storybook-utils/loader',

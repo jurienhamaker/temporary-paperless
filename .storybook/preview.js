@@ -2,8 +2,6 @@ import '../src/style/style.css';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 
 export const parameters = {
-    layout: 'centered',
-    viewMode: 'docs',
     options: {
         storySort: {
             order: [
@@ -17,15 +15,11 @@ export const parameters = {
         },
     },
     previewTabs: {
-        '@geometricpanda/storybook-addon-iframe': {
-            title: 'Abstract',
-        },
-        'storybook/docs/panel': {
-            title: 'Documentation',
-            index: -1,
-        },
         canvas: {
             title: 'Playground',
+        },
+        '@geometricpanda/storybook-addon-iframe': {
+            title: 'Abstract',
         },
     },
     actions: { argTypesRegex: '^on[A-Z].*' },
