@@ -21,8 +21,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     loading: boolean;
 }
 
+export type ButtonClickEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>;
+
 export type ButtonReactProps = ButtonProps & {
-    onClick?(): void;
+    onClick?(e?: ButtonClickEvent): void;
 };
 
 export const Button: FC<ButtonReactProps> = ({
@@ -40,13 +42,13 @@ export const Button: FC<ButtonReactProps> = ({
         loadingOpacity = 100;
     }
 
-    const checkClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const checkClick = (e: ButtonClickEvent) => {
         if (loading) {
             e.preventDefault();
             return;
         }
 
-        return onClick ? onClick() : null;
+        return onClick ? onClick(e) : null;
     };
 
     let loadingContainerClasses =

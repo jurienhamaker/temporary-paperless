@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas, ArgsTable  } from '@storybook/addon-docs/blocks';
+import { ArgsTable as PureArgsTable } from '@storybook/components'
+import { action } from '@storybook/addon-actions';
+import { Button } from './button.react';
+
+<Meta
+    title="Atoms/Button"
+    component={Button}
+    argTypes={{
+        children: {
+            name: 'content',
+            description: 'The content of the button',
+        },
+    }}
+    parameters={{
+        badges: ['beta'],
+        iframe: {
+            url:
+                'https://app.goabstract.com/embed/3b1136b5-4f3b-4a29-97f1-d882303eb8d6',
+        },
+    }}
+/>
+
+# Button
+
+This is a simple implementation of a button
+
+export const Template = args => <Button {...args} />;
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      children: 'Action Text'
+    }}
+  >
+    {Template.bind({})}
+   </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Default" />
+
+## Examples
+
+<div className="divide-y divide-mystic-darker">
+  <div className="grid grid-cols-2 gap-4">
+    <div class="flex items-center">
+      <h3>Secondary</h3>
+    </div>
+
+  <Canvas mdxSource={'<Button variant="secondary">Secondary</Button>'}>
+      <Button variant="secondary">Secondary</Button>
+  </Canvas>
+  </div>
+  <div className="grid grid-cols-2 gap-4">
+    <div class="flex items-center">
+      <h3>Link</h3>
+    </div>
+
+  <Canvas mdxSource={'<Button variant="link">Link</Button>'}>
+      <Button variant="link">Link</Button>
+  </Canvas>
+  </div>
+
+</div>
