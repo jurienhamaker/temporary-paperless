@@ -28,10 +28,10 @@ module.exports = {
             loader: 'wix-storybook-utils/loader',
             options: {
                 storyConfig: {
-                    moduleName: 'paperless',
-                    repoBaseURL: 'https://github.com',
+                    moduleName: '@employes/ui',
+                    repoBaseURL: 'https://github.com/employes/employes-ui/',
                     importFormat:
-                        "import {%componentName} from '%moduleName/%componentName'",
+                        "import { %componentName } from '%moduleName/%componentName'",
                 },
             },
         });

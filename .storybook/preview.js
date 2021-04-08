@@ -16,13 +16,13 @@ export const parameters = {
     },
     previewTabs: {
         canvas: {
-            title: 'Playground',
+            title: 'Story',
         },
         'storybook/docs/panel': {
             hidden: true,
         },
         '@geometricpanda/storybook-addon-iframe': {
-            title: 'Abstract',
+            title: 'Design',
         },
     },
     actions: { argTypesRegex: '^on[A-Z].*' },
