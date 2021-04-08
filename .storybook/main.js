@@ -4,7 +4,14 @@ module.exports = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-postcss',
-        '@storybook/preset-scss',
+        {
+            name: '@storybook/preset-scss',
+            options: {
+                cssLoaderOptions: {
+                    modules: true,
+                }
+            }
+        },
         '@geometricpanda/storybook-addon-iframe',
         '@geometricpanda/storybook-addon-badges',
     ],
